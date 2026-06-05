@@ -1,0 +1,19 @@
+# Multi-Agent Research System - Codex Rules
+
+## Project Architecture
+- This is an async-capable, multi-agent Python application.
+- All agents inherit from `research_agents/agents/base_agent.py`.
+- All inter-agent data flows through `research_agents/models/research_state.py`.
+- Never use bare dicts where a Pydantic model exists.
+
+## Code Standards
+- Python 3.11+, typed wherever practical.
+- Pydantic v2 for all data models.
+- Loguru for logging.
+- External calls go through retry-aware wrappers.
+- Keep prompts in `prompts.py`.
+
+## Testing
+- Mock Gemini and E2B in unit tests.
+- Skip live integration tests by default.
+

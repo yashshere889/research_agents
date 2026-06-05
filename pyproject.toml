@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-agents"
+version = "0.1.0"
+description = "Multi-agent LLM system for autonomous scientific research"
+requires-python = ">=3.11"
+dependencies = [
+  "google-genai>=1.0.0",
+  "transformers>=4.52.0",
+  "torch>=2.4.0",
+  "accelerate>=0.34.0",
+  "bitsandbytes>=0.43.0",
+  "e2b-code-interpreter>=0.0.10",
+  "chromadb>=0.5.0",
+  "pydantic>=2.7.0",
+  "pydantic-settings>=2.3.0",
+  "arxiv>=2.1.0",
+  "sentence-transformers>=3.0.0",
+  "loguru>=0.7.2",
+  "fpdf2>=2.7.9",
+  "markdown2>=2.4.13",
+  "pandas>=2.2.0",
+  "numpy>=1.26.0",
+  "scikit-learn>=1.5.0",
+  "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.2.0", "pytest-asyncio>=0.23.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["research_agents/tests"]
+markers = ["integration: live service tests skipped by default"]
